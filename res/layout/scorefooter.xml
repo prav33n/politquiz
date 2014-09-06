@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    android:layout_marginTop="10dp"
+    android:padding="5dp" >
+
+    <Button
+        android:id="@+id/startnew"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/sshare"
+        android:background="@drawable/title_button"
+        android:onClick="startnew"
+        android:text="Start Over"
+        android:textSize="18dp" 
+         android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/sshare"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/title_button"
+        android:onClick="sharescore"
+        android:text="@string/sharewith"
+        android:textSize="18dp"
+         android:textStyle="bold" />
+
+</RelativeLayout>

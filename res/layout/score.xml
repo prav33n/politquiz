@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/sheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/border"
+        android:padding="4dp" >
+
+        <TextView
+            android:id="@+id/sscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/qstats"
+            android:text="@string/score"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/qstats"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/title_button"
+            android:text="View Scores"
+            android:onClick="showstats"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/qlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sfooter"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sheader"
+        android:layout_margin="1dp"
+        android:divider="@color/background1"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:visibility="visible" >
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/quotesdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sheader"
+        android:layout_margin="3dp"
+        android:background="@drawable/border"
+        android:padding="3dp"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/qpubdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/date"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/qquote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/qpubdate"
+            android:layout_below="@+id/qpubdate"
+            android:text="@string/quote"
+            android:textSize="16dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/qsource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/qquote"
+            android:layout_below="@+id/qquote"
+            android:text="Source"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/qauthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/qsource"
+            android:layout_below="@+id/qsource"
+            android:text="@string/author"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/qaffiliation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/qauthor"
+            android:layout_below="@+id/qauthor"
+            android:text="affiliation"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/qshare"
+            style="@android:style/Widget.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/qaffiliation"
+            android:layout_below="@+id/qaffiliation"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/title_button"
+            android:onClick="sharelink"
+            android:text="@string/sharefriends"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/qview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/qshare"
+            android:layout_alignBottom="@+id/qshare"
+            android:layout_alignRight="@+id/qsource"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/title_button"
+            android:onClick="viewmore"
+            android:text="@string/view"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/qanswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/qpubdate"
+            android:layout_alignBottom="@+id/qpubdate"
+            android:layout_alignRight="@+id/qview"
+            android:padding="0dp"
+            android:text="@string/empty" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/border" >
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sfooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ads"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/border"
+        android:padding="5dp" >
+
+        <Button
+            android:id="@+id/startnew"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/sshare"
+            android:background="@drawable/title_button"
+            android:onClick="startnew"
+            android:text="Start Over"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/sshare"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_button"
+            android:onClick="sharescore"
+            android:text="@string/sharewith"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</RelativeLayout>

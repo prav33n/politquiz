@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="app_name">Democrat or Republican ?</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_home">Home</string>
+    <string name="score">Score</string>
+    <string name="question">Question</string>
+    <string name="qno">qno</string>
+    <string name="republican">Republican</string>
+    <string name="democrat">Democrat</string>
+    <string name="calculatescore">Calculate Score</string>
+    <string name="sharewith">Share Score</string>
+    <string name="sharefriends">Share with Friends</string>
+    <string name="empty"></string>
+    <string name="whosaidthis">Who Said this ?</string>
+    <string name="date">Date</string>
+    <string name="quote">Quote</string>
+    <string name="qsource">Source</string>
+    <string name="view">View More</string>
+    <string name="titlestring"> Who Said this? \n Democrat or Republican</string>
+    <string name="author">Author</string>
+    <string name="choice">Choice</string>
+
+</resources>

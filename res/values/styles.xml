@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This is a modified version of a class from the IO Schedule app.
+    The original copyright and license information follows.
+
+    Copyright 2010 Google Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+    <!-- Base application theme is the default theme. -->
+    <style name="Theme" parent="android:Theme"></style>
+
+    <!-- Variation on the Light theme that turns off the title -->
+    <style name="Theme.D1t" parent="android:style/Theme.Light">
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.D1" parent="android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+      
+    </style>
+    <style name="Theme.D1dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.D1tranlucent" parent="android:style/Theme.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+     
+     <style name="CustomWindowTitleText" parent="android:TextAppearance.WindowTitle">
+          <item name="android:textSize">30dip</item>
+          <item name="android:text">Democrat or Republican</item>
+          <item name="android:layout_gravity">center_vertical|center_horizontal|center</item>
+          <item name="android:gravity">center_vertical|center_horizontal|center</item>
+          <item name="android:textColor">@color/title_text_alt</item>
+          <item name="android:textStyle">normal</item>
+     </style>
+     
+     <!-- Changes the background color of the title bar -->
+     <style name="CustomWindowTitleBackground">
+           <item name="android:background">@color/title_separator</item>
+           
+     </style>
+
+     <!-- Set the theme for the window title -->
+     <!-- NOTE: setting android:textAppearence to style defined above -->
+     <style name="CustomWindowTitle">
+          <item name="android:textAppearance">@style/CustomWindowTitleText</item>
+          <item name="android:layout_gravity">center_vertical|center_horizontal|center</item>
+          <item name="android:gravity">center_vertical|center_horizontal|center</item>
+     </style>
+      <!-- Override properties in the default theme -->
+      <!-- NOTE: you must explicitly the windowTitleSize property, the title bar will not re-size automatically, text will be clipped -->
+    <!-- application theme for background. -->
+     <style name="app_theme" parent="android:style/Theme.Light">
+       <!-- <item name="android:windowBackground">@color/title_separator</item> -->
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:windowTitleSize">110dp</item>
+        <item name="android:windowTitleStyle">@style/CustomWindowTitle</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+        <item name="android:listViewStyle">@style/TransparentListView</item>
+        <item name="android:expandableListViewStyle">@style/TransparentExpandableListView</item>
+    </style>
+    
+        <style name="page_theme" parent="android:style/Theme.Light">
+        <!-- <item name="android:windowBackground">@color/title_separator</item> -->
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:windowTitleSize">60dip</item>
+        <item name="android:textSize">25dip</item>
+        <item name="android:windowTitleStyle">@style/CustomWindowTitle</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+        <item name="android:listViewStyle">@style/TransparentListView</item>
+        <item name="android:expandableListViewStyle">@style/TransparentExpandableListView</item>
+    </style>
+  <style name="TransparentListView" parent="@android:style/Widget.ListView">
+  <item name="android:cacheColorHint">@android:color/transparent</item>
+<!--  <item name="android:listSelector">@android:color/transparent</item> -->
+  </style>
+
+ <style name="TransparentExpandableListView" parent="@android:style/Widget.ExpandableListView">
+  <item name="android:cacheColorHint">@android:color/transparent</item>
+ </style>
+
+ 
+<!--Button styles  -->
+ <style name="HomeButton">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/title_text_alt</item>
+        <item name="android:background">@null</item>
+    </style>
+    
+<style name="Button">
+        <item name="android:layout_gravity">center_vertical|center_horizontal|center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/title_text_alt</item>
+        </style>
+
+    <style name="TitleBarProgressIndicator" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">14dip</item>
+        <item name="android:layout_marginRight">15dip</item>
+        <item name="android:layout_marginTop">14dip</item>
+        <item name="android:indeterminate">true</item> 
+    </style>
+	<style name="TitleBarSeparator">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@color/title_separator</item>
+    </style>
+</resources>

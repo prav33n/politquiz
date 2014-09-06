@@ -1,0 +1,157 @@
+  /*    	Cursor update;
+        	String query;
+        	int i = cur.getPosition()+1;
+        	quiz insert = new quiz();
+        	query ="select * from quiz where qno="+i;
+        	update = db.query(query);
+        	update.moveToFirst();
+        	Log.e("query",""+query+"//"+update.getInt(update.getColumnIndex("answered")));
+           	if(update.getInt(update.getColumnIndex("answered"))==0){
+        	insert.qid = i;
+        	insert.quoteid = cur.getInt(0);
+        	if(choice.getCheckedRadioButtonId() != -1){
+            	button = (RadioButton)findViewById(choice.getCheckedRadioButtonId());
+            	insert.choice = (String) button.getText();
+            	insert.answered=1;
+            }
+        	else {
+            	insert.choice = null;
+            	insert.answer=0;
+            	insert.answered = 0;
+            }
+        	query= "update quiz set quoteid = "+insert.quoteid+", choice = '"+insert.choice+"', answered = "+insert.answered+",time = (DATETIME('NOW')) where _id = "+insert.qid;
+        	Log.e("String",query);
+		    db.checkDB.execSQL(query); } */
+		    
+		    
+		      	
+   /* 	if(storage[i] != null){
+    		 if(cur.isFirst())
+    			 previous.setClickable(false);
+    		 else {
+    		 cur.moveToPrevious(); 
+   	         i = cur.getPosition();
+    		 Log.e("choice track","//"+storage[i].choice+"//"+cur.getPosition());
+    			 if(storage[i].choice == null){democrat.setChecked(false);
+                 republican.setChecked(false);}
+       			 else if(storage[i].choice.equalsIgnoreCase("Republican"))
+    				 republican.setChecked(true);
+    		    else if(storage[i].choice.equalsIgnoreCase("Democrat"))
+    		    	democrat.setChecked(true);
+    			 next.setClickable(true);
+    			
+    		 }
+    		iqno = cur.getPosition() + 1;
+    	    qno.setText("Question "+iqno);
+    	    tv.setText(cur.getString(cur.getColumnIndex("quote")));
+    	    qdetails.setText("Question "+iqno+" of 10"); 
+    	 }
+    		 
+   	if(cur.isFirst()){
+    		previous.setClickable(false);
+      	}
+    	else{
+    		i--;
+    		Log.e("storage array",""+i+"//"+storage[i].toString());
+    		if(storage[i].choice.equalsIgnoreCase("Republican"))
+    		choice.check(R.id.republican);
+    		else
+    		choice.check(R.id.democrat);
+    		next.setClickable(true);
+    		cur.moveToPrevious();
+    		if(i==1)
+    			i++;
+    	}
+    	iqno = cur.getPosition() + 1;
+    	qno.setText("Question "+iqno);
+    	tv.setText(cur.getString(cur.getColumnIndex("quote")));
+    	qdetails.setText("Question "+iqno+" of 10"); */
+    	
+    	
+    	     /*   try{
+        	if(storage[i] == null){
+						    		storage[i] = new quiz();
+						    		Log.e("storage array","new object created");
+						            storage[i].qid = cur.getPosition()+1;
+						            storage[i].quoteid = cur.getInt(0);
+								           
+						            	if(choice.getCheckedRadioButtonId() != -1){
+								            	button = (RadioButton)findViewById(choice.getCheckedRadioButtonId());
+								            	storage[i].choice = (String) button.getText();
+								                Log.e("Selected choice",""+cur.getString(cur.getColumnIndex("politicalaffiliation"))+"//"+storage[i].choice);
+								               	storage[i].answered=1;
+								            }
+								        else {
+								            	storage[i].choice = null;
+								            	storage[i].answer=0;
+								            	storage[i].answered = 0;
+								            }
+						    
+						      update = "update quiz set quoteid = "+storage[i].quoteid+", choice = '"+storage[i].choice+"', answered = "+storage[i].answered+",time = (DATETIME('NOW')) where _id = "+storage[i].qid;
+						      db.checkDB.execSQL(update);  
+						     
+				    }
+			       	
+	          	else if(choice.getCheckedRadioButtonId() != -1){
+			       Log.e("alternate looop","reached");
+			    	button = (RadioButton) findViewById(choice.getCheckedRadioButtonId());
+			       	if(storage[i].choice == null)
+			       		storage[i].choice = (String) button.getText();
+			       	else if(storage[i].choice.equalsIgnoreCase((String) button.getText()));
+			       	else
+			       	storage[i].choice = (String) button.getText();
+			       	storage[i].answered=1;
+			       	update = "update quiz set choice = '"+storage[i].choice+"', answered = "+storage[i].answered+",time = (DATETIME('NOW')) where _id = "+storage[i].qid;
+			       	db.checkDB.execSQL(update);  
+			       	} 
+        	 Log.e("Array values",""+storage[i].qid+"//"+storage[i].quoteid+"//"+storage[i].choice+"//"+storage[i].answer+"//"+storage[i].answered); 
+     }
+        
+        catch(Exception e){
+     	e.printStackTrace();   
+        } */ 
+        
+            /*	if(!cur.isFirst()){
+    		cur.moveToPrevious();
+    		
+    		int qno = cur.getPosition()+1;
+        	String tquery = "select answered,choice from quiz where _id ="+qno;
+        	Cursor qcur = db.query(tquery);
+        	startManagingCursor(qcur);
+        	qcur.moveToFirst();
+           	if(qcur.getInt(qcur.getColumnIndex("answered")) == 0)
+           		Log.e("answered","no");
+        	else{
+           		Log.e("answered","yes");
+           		if(qcur.getString(qcur.getColumnIndex("choice")).equalsIgnoreCase("Republican"))
+	   	    		choice.check(R.id.republican);
+	    		else if(qcur.getString(qcur.getColumnIndex("choice")).equalsIgnoreCase("Democrat"))
+	   	    		choice.check(R.id.democrat);
+           		}
+       }
+    	iqno = cur.getPosition() + 1;
+        tv.setText(cur.getString(cur.getColumnIndex("quote")));
+        qdetails.setText("Question "+iqno+" of 10"); */
+        
+         /*   	if(!cur.isLast()){
+       		choice.clearCheck();
+       		cur.moveToNext();
+    		int qno = cur.getPosition()+1;
+        	String tquery = "select answered,choice from quiz where _id ="+qno;
+        	Cursor qcur = db.query(tquery);
+        	startManagingCursor(qcur);
+        	qcur.moveToFirst();
+           	if(qcur.getInt(qcur.getColumnIndex("answered")) == 0){
+           		Log.e("answered","no");
+         	}
+           	else{
+           		Log.e("answered","yes");
+           		if(qcur.getString(qcur.getColumnIndex("choice")).equalsIgnoreCase("Republican"))
+	   	    		choice.check(R.id.republican);
+	    		else if(qcur.getString(qcur.getColumnIndex("choice")).equalsIgnoreCase("Democrat"))
+	   	    		choice.check(R.id.democrat);
+           	}
+         }
+    	iqno = cur.getPosition() + 1;
+        tv.setText(cur.getString(cur.getColumnIndex("quote")));
+        qdetails.setText("Question "+iqno+" of 10");*/

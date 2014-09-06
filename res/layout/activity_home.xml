@@ -1,0 +1,165 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tquestionno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qno"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/whosaidthis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/whosaidthis" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="2dp"
+        android:background="@drawable/border"
+        android:padding="2dp"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/tquestiontext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="2dp"
+            android:text="@string/question" />
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/ads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/border"
+        android:visibility="visible" >
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/hanswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/question"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/question"
+        android:checkedButton="-1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <RadioButton
+            android:id="@+id/democrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/democrat" />
+
+        <RadioButton
+            android:id="@+id/republican"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:checked="false"
+            android:text="@string/republican" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/hanswer"
+        android:padding="3dp"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/tquestiondetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="1 of 10"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tquestiondetails"
+            android:layout_marginRight="27dp"
+            android:layout_toLeftOf="@+id/tquestiondetails"
+            android:background="@drawable/title_button"
+            android:onClick="onclickprevious"
+            android:text="Prev"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/share"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/previous"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/title_button"
+            android:onClick="onshare"
+            android:text="@string/sharefriends"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/scorecalc"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/share"
+            android:layout_alignBottom="@+id/share"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/title_button"
+            android:onClick="oncalculate"
+            android:text="@string/calculatescore"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/scorecalc"
+            android:layout_alignTop="@+id/tquestiondetails"
+            android:layout_marginRight="42dp"
+            android:background="@drawable/title_button"
+            android:onClick="onclicknext"
+            android:text="Next"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
