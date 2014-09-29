@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -59,13 +60,10 @@ public class Home extends Activity {
 			 }
         catch(Exception e) {Log.e("error",e.getMessage());} 
         
-        // Create an ad.
-        adView = new AdView(this, AdSize.BANNER, "a1501f0f491755e");
         // Add the AdView to the view hierarchy. The view will have no size
         // until the ad is loaded.
        RelativeLayout layout = (RelativeLayout)findViewById(R.id.ads);
-        layout.addView(adView);
-        adView.loadAd(new AdRequest());
+       new Ad(layout,this);
 
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device.

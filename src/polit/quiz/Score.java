@@ -2,6 +2,7 @@ package polit.quiz;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -62,13 +63,10 @@ public class Score extends Activity{
         
         ListView list = (ListView)findViewById(R.id.qlist);
         
-        // Create an ad.
-        adView = new AdView(this, AdSize.BANNER, "a1501f0f491755e");
         // Add the AdView to the view hierarchy. The view will have no size
         // until the ad is loaded.
         RelativeLayout layout = (RelativeLayout)findViewById(R.id.ads);
-        layout.addView(adView);
-        adView.loadAd(new AdRequest());
+        new Ad(layout,this);
         
         //list header and footer
        // LayoutInflater inflater = this.getLayoutInflater();
